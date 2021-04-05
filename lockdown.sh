@@ -343,10 +343,6 @@ blacklist firewire-ohci
 blacklist firewire-sbp2" >> /etc/modprobe.d/blacklist.conf
 }
 
-disable_usb() {
-  echo "blacklist usb-storage" >> /etc/modprobe.d/blacklist.conf
-}
-
 disable_uncommon_protocols() {
   echo "install sctp /bin/true
 install dccp /bin/true
@@ -416,7 +412,6 @@ run setup_aide "Setup aide"
 run enable_process_accounting "Enable process accounting"
 run disable_uncommon_filesystems "Disable unused filesystems"
 run disable_firewire "Disable firewire"
-run disable_usb "Disable usb"
 run disable_uncommon_protocols "Disable uncommon protocols"
 run change_root_permissions "Change root dir permissions"
 run restrict_access_to_compilers "Restrict access to compilers"
